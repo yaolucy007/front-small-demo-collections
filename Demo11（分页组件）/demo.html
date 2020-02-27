@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Demo11（分页组件）</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="scripts/jquery-2.1.0.min.js"></script>
+  <script src="scripts/jquery.pagenation.js"></script>
+ </head>
+ <body>
+	<h3>empty</h3>
+	<div class="content" id="empty"></div>
+	<h3>1111111111</h3>
+	<div class="content" id="1"></div>
+	<h3>2222222222</h3>
+	<div class="content" id="2"></div>
+	<h3>3333333333</h3>
+	<div class="content" id="3"></div>
+	<h3>4444444444</h3>
+	<div class="content" id="4"></div>
+	<h3>5555555555</h3>
+	<div class="content" id="5"></div>
+	<h3>6666666666</h3>
+	<div class="content" id="6"></div>
+	<h3>7777777777</h3>
+	<div class="content" id="7"></div>
+	<h3>8888888888</h3>
+	<div class="content" id="8"></div>
+	<h3>9999999999</h3>
+	<div class="content" id="9"></div>
+	<h3>0000000000</h3>
+	<div class="content" id="10"></div>
+	</div>
+	<script>
+		$(document).ready(function() {
+			$("#empty").pagenation({totalCount:0,pageIndex:1,pageSize:10,url:"",emptyInfo:"已经到底了，就不给你看分页插件的样子"});
+			$("#1").pagenation({totalCount:98,pageIndex:1,pageSize:10,url:"file:///D:/Animate%20Develope/Demo11%EF%BC%88%E5%88%86%E9%A1%B5%E7%BB%84%E4%BB%B6%EF%BC%89/demo.html"});
+			$("#2").pagenation({totalCount:98,pageIndex:2,pageSize:10,url:"file:///D:/Animate%20Develope/Demo11%EF%BC%88%E5%88%86%E9%A1%B5%E7%BB%84%E4%BB%B6%EF%BC%89/demo.html"});
+			$("#3").pagenation({totalCount:98,pageIndex:3,pageSize:10,url:"file:///D:/Animate%20Develope/Demo11%EF%BC%88%E5%88%86%E9%A1%B5%E7%BB%84%E4%BB%B6%EF%BC%89/demo.html"});
+			$("#4").pagenation({totalCount:98,pageIndex:4,pageSize:10,url:"file:///D:/Animate%20Develope/Demo11%EF%BC%88%E5%88%86%E9%A1%B5%E7%BB%84%E4%BB%B6%EF%BC%89/demo.html"});
+			$("#5").pagenation({totalCount:98,pageIndex:5,pageSize:10,url:"file:///D:/Animate%20Develope/Demo11%EF%BC%88%E5%88%86%E9%A1%B5%E7%BB%84%E4%BB%B6%EF%BC%89/demo.html"});
+			$("#6").pagenation({totalCount:98,pageIndex:6,pageSize:10,url:"file:///D:/Animate%20Develope/Demo11%EF%BC%88%E5%88%86%E9%A1%B5%E7%BB%84%E4%BB%B6%EF%BC%89/demo.html"});
+			$("#7").pagenation({totalCount:98,pageIndex:7,pageSize:10,url:"file:///D:/Animate%20Develope/Demo11%EF%BC%88%E5%88%86%E9%A1%B5%E7%BB%84%E4%BB%B6%EF%BC%89/demo.html"});
+			$("#8").pagenation({totalCount:98,pageIndex:8,pageSize:10,url:"file:///D:/Animate%20Develope/Demo11%EF%BC%88%E5%88%86%E9%A1%B5%E7%BB%84%E4%BB%B6%EF%BC%89/demo.html"});
+			$("#9").pagenation({totalCount:98,pageIndex:9,pageSize:10,url:"file:///D:/Animate%20Develope/Demo11%EF%BC%88%E5%88%86%E9%A1%B5%E7%BB%84%E4%BB%B6%EF%BC%89/demo.html"});
+			$("#10").pagenation({totalCount:98,pageIndex:10,pageSize:10,url:"file:///D:/Animate%20Develope/Demo11%EF%BC%88%E5%88%86%E9%A1%B5%E7%BB%84%E4%BB%B6%EF%BC%89/demo.html"});
+		});
+	</script>
+ </body>
+</html>

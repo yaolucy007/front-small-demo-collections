@@ -1,0 +1,36 @@
+  .content{
+	width:100%;
+	margin:0;
+	padding:0;
+  }
+
+  .pageArea{
+	list-style:none;
+	overflow: hidden;
+    text-align: center;
+  }
+  .pageArea li{
+	display: inline-block;
+	margin-left:6px;
+	margin-right:12px;
+	
+  }
+  .page-border{
+	border:1px solid #ccc;
+  }
+  .page-number{
+	padding-left:6px;
+	padding-right:6px;
+	line-height:24px;
+	cursor:pointer;
+	color:#000;
+  }
+  .cur{
+	border:1px solid #ff9900;
+	background:#ff9900;
+	color:#fff;
+	cursor:not-allowed;
+  }
+  .empty{
+	color:#ccc;
+  }

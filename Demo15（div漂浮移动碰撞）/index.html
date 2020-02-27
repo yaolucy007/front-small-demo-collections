@@ -1,0 +1,90 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>移动窗口</title>
+<style>
+    body{
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 1000px;
+      background: #eee;
+    }
+    /*示例1*/
+    #move_port{
+      position: fixed;
+      width: 15%;
+      min-height: 150px;
+      left: 0;
+      top:0;
+      cursor: pointer;
+      background: #2aabd2;
+      z-index: 10000;//调整层级
+    }
+    /*示例2*/
+    .move_div{
+      position: fixed;
+      width: 360px;
+      height: 200px;
+      left: 0;
+      top:0;
+      cursor: pointer;
+      background: #d2435c;
+    }
+    /*示例3*/
+    .d0{
+      position:relative;
+      width: 200px;
+      height: 200px;
+      margin: 50px auto;
+      background: #ddd;
+    }
+    .d1{
+      position: absolute;
+      width: 120px;
+      min-height: 80px;
+      left: 0;
+      top:0;
+      cursor: pointer;
+      background: #d2a12e;
+    }
+    /*示例4*/
+    .d2{
+      position:fixed;
+      left:0;
+      top:0;
+      width: 500px;
+      height: 300px;
+      background: #cc90c9;
+    }
+    .d3{
+      position: absolute;
+      width: 60px;
+      min-height: 80px;
+      left: 0;
+      top:0;
+      cursor: pointer;
+      background: #74d233;
+    }
+  </style>
+</head>
+<body>
+
+<div class="d0">
+	
+	<div class="d1">
+	这是移动的部分
+	</div>
+</div>
+
+<script src="js/jquery-2.1.0.min.js"></script>
+<script src="js/move_port.js"></script>
+<script>
+   /*调用移动浮窗方法并按顺序传入正确参数["obj",x,y,l,t,m],obj必填*/
+   //示例:
+   move_obj(".d1",200,200);
+</script>
+</body>
+</html>

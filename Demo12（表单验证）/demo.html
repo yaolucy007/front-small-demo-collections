@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="jQuery,easyform,form validation,javascript,js,jq,jquery,表单验证,插件">
+    <meta name="description" content="jQuery.Easyform表单验证插件">
+    <title>EasyFormDemo</title>
+    <meta name="description" content="">
+    <meta http-equiv="cleartype" content="on">
+    <link rel="stylesheet" href="css/platform-1.css">
+    <link rel="stylesheet" href="js/easyform/easyform.css">
+    <link rel="stylesheet" href="css/tab.css">
+    <script src="js/jquery-2.1.0.min.js"></script>
+    <script src="js/easyform/easyform.js"></script>
+</head>
+<body>
+
+<div class="page">
+    <div class="header">
+        <a class="link title-ani"  data-letters="Easyform">Easyform</a>
+        <br>
+    </div>
+    <div class="form-div">
+        <form id="reg-form" action="" method="post">
+
+            <table>
+                <tr>
+                    <td>用户名</td>
+                    <td><input name="uid" type="text" id="uid"
+                               data-easyform="length:4 16;char-normal;real-time;ajax:ajax_demo(1);"
+                               data-message="用户名必须为4—16位的英文字母或数字"
+                               data-message-ajax="用户名已存在!">
+                    </td>
+                </tr>
+                <tr>
+                    <td>密码</td>
+                    <td><input name="psw1" type="password" id="psw1" data-easyform="length:6 16;"
+                               data-message="密码必须为6—16位"></td>
+                </tr>
+				 <tr>
+                    <td>test</td>
+                    <td>
+					<select id="test" name="test" data-easyform="uint:1 100;">
+						<option value="0">qingxuanze</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+					</select>
+					</td>
+                </tr>
+				<tr>
+                    <td>复选框</td>
+                    <td>
+						<input type="checkbox" value="1" id="ck1" name="ck" data-easytip="left:260" data-message="至少选择一项" /><label for="ck1">ck1</label>
+						<input type="checkbox" value="2" id="ck2" name="ck" /><label for="ck2">ck2</label>
+						<input type="checkbox" value="3" id="ck3" name="ck" /><label for="ck3">ck3</label>
+						<input type="checkbox" value="4" id="ck4" name="ck" /><label for="ck4">ck4</label>
+						<input type="checkbox" value="5" id="ck5" name="ck" /><label for="ck5">ck5</label>
+					</td>
+                </tr>
+                <tr>
+                    <td>确认密码</td>
+                    <td><input name="psw2" type="password" id="psw2" data-easyform="length:6 16;equal:#psw1;"
+                               data-message="两次密码输入要一致"></td>
+                </tr>
+                <tr>
+                    <td>email</td>
+                    <td><input name="email" type="text" id="email" data-easyform="email;"
+                               data-message="Email格式要正确"></td>
+                </tr>
+                <tr>
+                    <td>昵称</td>
+                    <td><input name="nickname" type="text" id="nickname" data-easyform="length:2 16;"></td>
+                </tr>
+            </table>
+
+            <div class="buttons" style="margin-top: 50px;">
+                <input value="提示" type="submit" style="margin-right:20px; margin-top:20px;">
+                
+            </div>
+
+            <br class="clear">
+        </form>
+    </div>
+
+    
+
+</div>
+
+<script>
+
+    $(document).ready(function ()
+    {
+        var v = $('#reg-form').easyform();
+        v.success = function (ef)
+        {
+            console.log("成功");
+        };
+
+        v.complete = function (ef)
+        {
+            console.log("完成");
+        };
+    });
+
+    function ajax_demo(p)
+    {
+        $("#uid").trigger("easyform-ajax", true);
+    }
+
+
+</script>
+
+</body>
+</html>

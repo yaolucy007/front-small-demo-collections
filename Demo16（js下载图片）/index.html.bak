@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-2.1.0.min.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        img {
+            display: block;
+            width: 500px;
+        }
+
+        .card {
+            display: inline-block;
+            position: relative;
+            width: 400px;
+            height: 250px;
+        }
+
+        .card img {
+            width: 100%;
+        }
+
+        .card .down_btn_a {
+            display: inline-block;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            background-color: #20b1aa;
+            text-decoration: none;
+            text-align: center;
+            color: #fff;
+        }
+
+        .card .down_btn_a:hover {
+            background-color: #ccc;
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card"> <img id="testimg" src="http://filedemo.zyzztop.com/FlleHZZr_0Il7IQkWU81uyWR9X7s" />
+        <a href="javascript:;" class="down_btn_a">点击下载</a></div>
+    
+
+    <script type="text/javascript">
+		$(".down_btn_a").click(function(){
+			let src = 'https://scglapi.hnljwl.com/Upload/03745f6cfa9b4ab3ba8ac0cb6afd1328.jpeg';
+			var canvas = document.createElement('canvas');
+			var img = document.createElement('img');
+			img.onload = function(e) {
+				canvas.width = img.width;
+				canvas.height = img.height;
+				var context = canvas.getContext('2d');
+				context.drawImage(img, 0, 0, img.width, img.height);
+				
+				canvas.getContext('2d').drawImage(img, 0, 0, img.width, img.height);
+				canvas.toBlob((blob)=>{
+				    let link = document.createElement('a');
+				    link.href = window.URL.createObjectURL(blob);
+				    link.download = 'aaa'; 
+				    link.click();  
+				}, "image/jpeg");
+			}
+			img.setAttribute("crossOrigin",'Anonymous');
+			img.src = src;
+		});
+	</script>
+</body>
+
+</html>

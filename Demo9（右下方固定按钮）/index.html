@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>右下方固定按钮DEMO</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<div style="height:10000px;"></div>
+
+<div class="suspension">
+	<div class="suspension-box">
+		<a href="javascript:void(0);" class="a"></a>
+		<a href="javascript:void(0);" class="a"></a>
+		<a href="javascript:void(0);" class="a"></a>
+		<a href="javascript:void(0);" class="a"></a>
+		<a href="javascript:void(0);" id="goTop" class="a a-top"></a>
+
+		<div class="d first">
+			11111
+		</div>
+		<div class="d second">
+			2222
+		</div>
+		<div class="d third">
+			33333
+		</div>
+		<div class="d fourth">
+			44444
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$(".suspension .a").click(function(){
+		if($(".a").index($(this))<4){
+			if($(".d").eq($(".a").index($(this))).css("display")!="none"){
+				$(".d").eq($(".a").index($(this))).hide();
+			}else{
+				$(".d").eq($(".a").index($(this))).show().siblings(".d").hide();
+			}
+		}
+	});
+	$("#goTop").on("click", function(){
+		$("html,body").animate({scrollTop: 0});
+	});
+	$(window).scroll(function(){
+		var st = $(document).scrollTop();
+		var $top = $(".suspension .a-top");
+		if(st > 400){
+			$top.css({display: 'block'});
+		}else{
+			if ($top.is(":visible")) {
+				$top.hide();
+			}
+		}
+	});
+});	
+</script>
+
+</body>
+</html>

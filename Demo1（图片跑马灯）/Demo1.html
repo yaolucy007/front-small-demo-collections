@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+ <head>
+ <!--横向轮播效果-->
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Demo1</title>
+  <style>
+  <style type="text/css">
+         div,img{
+             margin:0;
+             padding:0;
+         }
+         img{
+             float:left;
+             height:100px;
+             width:150px;
+         }
+         #div1{
+             width:710px;
+             height:110px;
+             overflow: hidden;
+             border:solid blue 2px;
+         }
+         #div2,#div3{
+             float:left;
+         }
+		 #div2 img{
+			margin:5px 12px 5px 12px;
+			border:1px solid #ccc;
+		 }
+		 #div3 img{
+			margin:5px 12px 5px 12px;
+			border:1px solid #ccc;
+		 }
+         #div4{
+             width:500%;/*这个属性很重要 让容器有足够的宽度实现滚动*/
+             float:left;
+         }
+     </style>
+  </style>
+ </head>
+ <body>
+  <div id="div1">
+          <div id="div4">
+              <div id="div2">
+                  <img src="img/1.png" alt="图片1"/>
+                  <img src="img/2.png" alt="图片2"/>
+                  <img src="img/3.png" alt="图片3"/>
+                  <img src="img/4.png" alt="图片4"/>
+				  <img src="img/5.png" alt="图片4"/>
+				  <img src="img/6.png" alt="图片4"/>
+				  <img src="img/7.png" alt="图片4"/>
+              </div>
+             <div id="div3"></div><!--这个容器是用来防止图片滚动时会出现空白的区域-->
+         </div>
+     </div>
+<script type="text/javascript">
+     window.onload=function(){
+           var v1=document.getElementById('div1');
+           var v2=document.getElementById('div2');
+           var v3=document.getElementById('div3');
+  
+           v3.innerHTML= v2.innerHTML;//将v2容器里面的图片插入到v3容器里面  使其空白区域被遮住。
+           function fun(){
+             if(v1.scrollLeft<=0){
+                 v1.scrollLeft=900;
+             }else{
+                 v1.scrollLeft=v1.scrollLeft-170;
+             }
+         }
+ 
+         var fun1=setInterval(fun,1500);
+		 /*
+         v1.onmouseover = function() {//鼠标经过时  清除定时器  停止图片的滚动
+                 clearInterval(fun1)
+             };
+         v1.onmouseout = function() {//鼠标离开后  继续滚动图片
+                 fun1 = setInterval(fun, 1000)
+             };
+		 */
+     }
+ 
+ </script>
+ </body>
+</html>

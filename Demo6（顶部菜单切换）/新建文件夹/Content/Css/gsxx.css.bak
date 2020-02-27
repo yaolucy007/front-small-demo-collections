@@ -1,0 +1,162 @@
+body {
+    font-family: Microsoft Yahei, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    background-color: #f3f5f8;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    box-sizing: border-box;
+    color: #5f5f5f;
+    font-size: 10px;
+    height: 100%;
+}
+
+.clear:before,
+.clear:after {
+    content: "";
+    display: table;
+}
+
+.clear:after {
+    clear: both;
+    overflow: hidden;
+}
+
+.clear {
+    zoom: 1;
+}
+
+body, div, ul, ol, li, form, input,
+fieldset, h1, h2, h3, h4, h5, h6, dl, dt, dd {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+fieldset,
+img {
+    border: none;
+}
+
+a {
+    text-decoration: none;
+    color: #666;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+p {
+    word-wrap: break-word;
+}
+
+
+.gsxx-list{
+    width: 100%;
+    padding: 10px 0;
+}
+.gsxx-title{
+    width: 100%;
+    display: inline-block;
+}
+.gsxx-title img{
+    padding: 0 10px;
+    float: left;
+    width: 23%;
+}
+.gsxx-con{
+    float: left;
+    width: 77%;
+}
+.gsxx-con-font{
+    font-size: 1.2em;
+}
+.gsxx-con>p{
+    margin: 5px 0;
+}
+.gess-lx{
+    padding: 0 10px;
+}
+.gsxx-color-blue{
+    color: #0167ff;
+    font-weight: bold;
+}
+.phone{
+    width: 20%;
+    margin: 0;
+    padding: 5px;
+    background: #fbba5b;
+    border-radius: 30px;
+    text-align: center;
+}
+.gsxx-overflow{
+    width: 100%;
+    overflow-x: scroll;
+    margin: 0;
+}
+.gsxx-overflow-y{
+    overflow-x: scroll;
+    height: 48px;
+    width: 1200px;
+}
+
+.gsxx-overflow-y li{
+    float: left;
+    margin: 0 15px;
+    height: 48px;
+    line-height: 48px;
+    border-bottom: 2px solid transparent;
+    padding: 0 17px;
+    cursor: pointer;
+
+}
+
+.gsxx-overflow-y .active{
+    border-bottom: 1px solid #19ACF7;
+    color: #19ACF7;
+}
+
+.content-box{
+          position:relative;
+        	height:400px;
+        	overflow:hidden;
+        }
+        .Jtab_item{
+          position:absolute;
+		  width:100%;
+		  height:400px;
+		  
+        }
+        .Jtab_item .content-item{
+			position:absolute;
+        	width:100%;
+        	height:400px;
+			z-index:900;
+        }
+		.top-item{
+			z-index:9999;
+		}
+
+
+
+

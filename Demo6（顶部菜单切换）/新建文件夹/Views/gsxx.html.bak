@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-cn ">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../Content/Css/style.css"/>
+    <link rel="stylesheet" href="../Content/Css/gsxx.css"/>
+    <link rel="stylesheet" href="../Content/Css/iconfont.css"/>
+    <script src="https://cdn.bootcss.com/Swiper/4.0.1/js/swiper.min.js"></script>
+    <title>公司信息</title>
+</head>
+<body>
+<div id="page">
+    <div class="header">
+        <div class="header-logo">
+            <img src="../Content/Img/logo.png">
+        </div>
+        <div class="header-r">
+            <div class="sub-search">
+                <div class="sub-lg">
+                    <a href="#"><img src="../Content/Img/sousuo.png"></a>
+                </div>
+                <select class="select">
+                    <option value="0">找设备</option>
+                    <option value="123">找产品</option>
+                    <option value="124">找厂房</option>
+                    <option value="125">找工作</option>
+                </select>
+                <input class="nav-hot"/>
+            </div>
+        </div>
+        <span class="menu"></span>
+        <div class="nav-dp">
+            <ul class="nav-main-items">
+                <li class="active"><a href="">首页</a></li>
+                <li><a href="">设备地图</a></li>
+                <li><a href="">产销对接</a></li>
+                <li><a href="">闲置资源</a></li>
+                <li>
+                    <span class="click-icon">专家人才<i class="iconfont icon-triangle-down"></i></span>
+                    <ul class="unfold">
+                        <li><a href="">专家问答</a></li>
+                        <li><a href="">人才招聘</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="click-icon">政府资源<i class="iconfont icon-triangle-down"></i></span>
+                    <ul class="unfold">
+                        <li><a href="">政府服务</a></li>
+                        <li><a href="">培训与展会</a></li>
+                    </ul>
+                </li>
+                <li><a href="">项目招标</a></li>
+                <li><a href="">工业资源</a></li>
+                <li>
+                    <span class="click-icon">科技驱动<i class="iconfont icon-triangle-down"></i></span>
+                    <ul class="unfold">
+                        <li><a href="">科技成果</a></li>
+                        <li><a href="">科技前沿</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!--    公司信息-->
+
+    <div class="gsxx-list clear">
+        <div class="gsxx-title">
+            <img src="../Content/Img/t4.png">
+            <div class="gsxx-con">
+            <span class="gsxx-con-font">洛阳申汇钢模制造有限公司</span>
+            <p>企业人数：15人</p>
+            <span>综合评分:</span>
+            <span style="color: #ffa800; margin-left: 5px; ">★☆☆☆☆</span>
+
+        </div>
+        </div>
+        <div class="gess-lx">
+
+            <p class="gsxx-price"><span class="gsxx-color-blue">加工工艺 </span>桥梁钢模、异形钢模、隧道衬砌台车的设计制造；机电设备、液压系
+                统的设计制造；建筑设备的设计制造；机械设备加工。</p>
+            <p><span class="gsxx-color-blue">所在城市：</span>河南省 / 洛阳市</p>
+            <p class="phone">联系我们</p>
+        </div>
+    </div>
+    <div class="gsxx-overflow">
+        <div class="gsxx-overflow-y">
+            <ul>
+                <li class="active">企业简介</li>
+                <li class="">人员构成</li>
+                <li class="">企业产品</li>
+                <li class="">闲置资源</li>
+                <li class="">招聘职位</li>
+                <li class="">企业设备</li>
+                <li class="">合作记录</li>
+                <li class="">企业资质</li>
+                <li class="">科技成果</li>
+                <li class="">项目信息</li>
+            </ul>
+        </div>
+        
+    </div>
+	<div class="gsxx-mian content-box">
+			<div class="Jtab_item clearfix">
+				<div style="background:pink" class="content-item top-item">企业简介</div>
+				<div style="background:red" class="content-item">人员构成</div>
+				<div style="background:yellow" class="content-item">企业产品</div>
+				<div style="background:pink" class="content-item">闲置资源</div>
+				<div style="background:red" class="content-item">招聘职位</div>
+				<div style="background:yellow" class="content-item">企业设备</div>
+				<div style="background:pink" class="content-item">合作记录</div>
+				<div style="background:red" class="content-item">企业资质</div>
+				<div style="background:yellow" class="content-item">科技成果</div>
+				<div style="background:pink" class="content-item">项目信息</div>
+  			</div>
+        </div>
+
+    <!--  公司信息内容-->
+
+    <div class="footer">
+        <p>中原智造工业共享云平台</p>
+        <p>联系电话：0379-69957688</p>
+        <p>联系邮箱：zyzzgyy@163.com</p>
+        <p>版权所有：河南领聚网络科技有限公司 ALL Rights Reserved
+            豫ICP备18044536号 </p>
+    </div>
+</div>
+
+<script src="../js/jquery.min.js"></script>
+
+<script>
+    $(function () {
+        $(".menu").click(function () {
+            $(".nav-dp").toggle();
+        });
+        $(".nav-main-items li").click(function () {
+            $(".nav-main-items li").eq($(this).index())
+                .addClass("active").siblings().removeClass("active");
+        });
+    });
+    $(document).ready(function(){
+        $(".click-icon").click(function(){
+            $(this).next().stop().slideToggle()
+        });
+		
+		$('.gsxx-overflow-y ul li').click(function(){
+		 var _index=$(this).index();
+		 $('.gsxx-overflow-y ul li').eq(_index).addClass('active').siblings().removeClass('active');
+		 $(".content-item").eq(_index).adClass("top-item").siblings().removeClass("top-item");
+		 
+		})
+    });
+</script>
+</body>
+</html>

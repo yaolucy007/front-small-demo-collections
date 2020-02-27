@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+	<head>
+		<link rel="stylesheet" href="css/style.css">	
+		<script src="scripts/jquery-1.10.2.min.js"></script>
+		<script src="scripts/jquery.modal.pop.js"></script>
+	</head>
+	<body>
+		<a id="first" data-modal-id="pop" href="javascript:void(0);">弹出一个层</a>
+
+		<a id="second" href="javascript:void(0);">弹出提示</a>
+
+		<script type="text/html" id="firstPop">
+			<p>11111111111111111111111</p>
+			<p>222222222222222222222222</p>
+			<p>3333333333333333333333333</p>
+			<p>44444444444444444444444444</p>
+		</script>
+
+		<script type="text/javascript">
+			
+			setInterval(function(){
+				$.ajax({url:"http://localhost:8022/api/appmeeting/test",async:true,type:"get",success:function(res){
+					console.log(res);
+				}
+				});
+			},1000)
+
+			$("#first").click(function(){
+				var a=new modalPop({id:"123",bodySelector:"#firstPop"});
+				a.init();
+				a.show();
+			});
+			
+			function guid() {
+				return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+				var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+				return v.toString(16);
+			});
+}
+			
+			$.extend({
+				tips:function(title,type,isConfirm,callback1,callback2){
+					var id='xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+						var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+						return v.toString(16);
+						});
+
+				console.log(id);
+
+					var View="<div id=\""+id+"\" class=\"popUp\"><div class=\"buckle-integral-content\"><div class=\"mains mart0 marb40\">";
+					View+="<p class=\"marb40\">"+title+"</p>";
+					switch(type){
+					case "success":
+						View+="<img src=\"../img/warnings.png\">";
+						break;
+					case "warning":
+						View+="<img src=\"../img/warnings.png\">";
+						break;
+					case "error":
+						View+="<img src=\"../img/warnings.png\">";
+						break;
+					}
+					View+="</div></div><div class=\"textal marb30\">";
+					View+="<button id=\"ok"+id+"\" type=\"button\" class=\"btn btn-lg backCor23\">确认</button>";
+					if(isConfirm){
+						View+="<button id=\"cancel"+id+"\" type=\"button\" class=\"btn btn-rg\">取消</button>";
+					}
+					View+="</div></div>";
+					
+					if($(".modal-bg").length==0){
+						$('<div class="modal-bg" />').appendTo("body");
+					}
+					$("body").append(View);
+					$("#ok"+id).click(function(){
+						var callbacks=$.Callbacks();
+						callbacks.add(callback1);
+						callbacks.add(function(){
+							//TODO:删除弹框
+							$("#"+id).fadeOut(200);
+							$(".modal-bg").delay(200).fadeOut(200);
+							$("#"+id).remove();
+						});
+						callbacks.fire($("#"+id));
+					});
+
+					$("#cancel"+id).click(function(){
+						var callbacks=$.Callbacks();
+						callbacks.add(callback2);
+						callbacks.add(function(){
+							//TODO:删除弹框
+							$("#"+id).fadeOut(200);
+							$(".modal-bg").delay(200).fadeOut(200);
+							$("#"+id).remove();
+						});
+						callbacks.fire($("#"+id));
+					});
+
+					
+					$("#"+id).delay(200).fadeIn(200);
+				}
+			});
+
+			$("#second").click(function(){
+				$.tips("123123123","warning",true,function(){
+					alert("success");
+				},function(){
+					alert("cancel");
+				});
+			});
+		</script>
+	</body>
+</html>

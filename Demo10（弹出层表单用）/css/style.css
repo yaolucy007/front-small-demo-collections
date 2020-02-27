@@ -1,0 +1,30 @@
+.modal-bg{
+	position: fixed; 
+	height: 100%;
+	width: 100%;
+	background: #000;
+	background: rgba(0,0,0,0.8);
+	z-index: 9990;
+	display: none;
+	top: 0;
+	left: 0; 
+}
+.modal-view{
+	z-index:9999;
+	background: #fff; 
+	position: fixed; 
+	left: 50%; 
+	top: 50%; 
+	margin-left: -200px; 
+	margin-top: -150px;
+	border-radius: 5px;
+	display:none;
+	min-width:400px;
+	min-height:300px;
+}
+
+
+.head-pop-bg{ height: 46px; position: relative;  background-color: #fed38f;}
+.head-pop-bg-text{ position: absolute ;z-index: 99;  font-weight: bold; color: #fff; left: 20px; top: 10px;}
+.head-pop-bg img{position: relative;}
+.close{position: absolute;right: 20px;top: 12px;width: 20px;height: 20px;border: 1px solid white;line-height: 18px;border-radius: 50%; font-weight: 900;color: #fed38f;background:#fff;cursor:pointer;}

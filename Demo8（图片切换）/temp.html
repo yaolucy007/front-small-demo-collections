@@ -1,0 +1,33 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>强大的支持手机端响应式的jQuery焦点图轮播特效插件bxslider.js</title>
+
+<script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="jquery.bxslider.js"></script>
+
+<link href="jquery.bxslider.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="slider8">
+      <div class="slide"><img src="http://file.zyzztop.com/781eb32c49224a218fe56b765266abb2.jpg"></div>
+      <div class="slide"><img src="http://file.zyzztop.com/781eb32c49224a218fe56b765266abb2.jpg"></div>
+      <div class="slide"><img src="http://file.zyzztop.com/781eb32c49224a218fe56b765266abb2.jpg"></div>
+      <div class="slide"><img src="http://file.zyzztop.com/781eb32c49224a218fe56b765266abb2.jpg"></div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+          $('.slider8').bxSlider({ 
+            //slideWidth: 400, 
+			adaptiveHeight: true,
+			startSlides: 0, 
+            slideMargin: 0,
+			pager:false
+          });
+        });
+    </script>
+</body>
+</html>

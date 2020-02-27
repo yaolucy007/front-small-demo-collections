@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+  .container{border:1px solid red; height:500px;}
+  .container .images-container{border:1px solid #ccc;margin:0 auto;height:300px;width:400px;position:relative;}
+  .container .images-container img{height:300px;width:400px;}
+  .item-img{position:absolute; top:0; left:0;z-index:9900;}
+  .container .images-icon{border:1px solid #ccc;margin:0 auto;height:80px;width:400px;}
+  .icon-list{}
+  .icon-list li{float:left;list-style:none;border:1px solid red;margin-left:12px;margin-right:12px;}
+  </style>
+  <script src="jquery-1.10.2.min.js"></script>
+ </head>
+ <body>
+	<div class="container">
+		<div class="images-container">
+			<img class="item-img" data-index="1" src="images/1.jpg" />
+			<img class="item-img" data-index="2" src="images/2.jpg" />
+			<img class="item-img" data-index="3" src="images/3.jpg" />
+			<img class="item-img" data-index="4" src="images/4.jpg" />
+		</div>
+		<div style="margin-top:30px;"></div>
+		<div class="images-icon">
+		<ul class="icon-list">
+			<li class="item" data-index="1"><img src="images/a.jpg" /></li>
+			<li class="item" data-index="2"><img src="images/b.jpg" /></li>
+			<li class="item" data-index="3"><img src="images/c.jpg" /></li>
+			<li class="item" data-index="4"><img src="images/d.jpg" /></li>
+		</ul>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			$("img[data-index=1]").css("z-index",9999);
+			$(".item").on("click",function(){
+				$(".item-img").css("z-index",9900);
+				$("img[data-index="+$(this).attr("data-index")+"]").css("z-index",9999);
+			});
+		})
+	</script>
+ </body>
+</html>

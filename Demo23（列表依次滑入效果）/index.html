@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style type="text/css">
+            *{list-style-type: none;}
+            body{background-color: #f4f4f4;margin:0;left: 0;top: 0;}
+            #main_news_list{width:500px;position: fixed;bottom:30px;right: 30px;z-index: 99;}
+            #main_news_list li{
+                overflow:hidden;
+                padding:10px;
+                width:400px;
+                height:60px;
+                opacity: 0;
+                margin-bottom:10px;
+                border-radius: 5px;
+                background-color: #ffffff;
+                position: relative;
+                border: 1px solid #ebeef5;
+                box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+            }
+            #main_news_list li b{float:right;cursor: pointer;}
+            .main_news_active{animation:action 1s;opacity: 1 !important;}
+            .main_news_heightActive{animation:heightChange 0.5s;}
+            @keyframes action{
+                0%{transform: translateX(240px);opacity: 0;}
+                100%{ transform: translateX(0px);opacity: 1;margin-right:auto;}
+            }
+            @keyframes heightChange{
+                0%{height:60px;opacity: 1;padding:10px;margin-bottom:10px;}
+                100%{height:0px;opacity: 0;padding:0px;margin-bottom:0px;}
+            }
+        </style>
+    </head>
+    <body>
+        <ul id="main_news_list">
+            <li>列表依次进入1<b>X</b></li>
+            <li>列表依次进入2<b>X</b></li>
+            <li>列表依次进入3<b>X</b></li>
+            <li>列表依次进入4<b>X</b></li>
+            <li>列表依次进入5<b>X</b></li>
+            <li>列表依次进入6<b>X</b></li>
+            <li>列表依次进入7<b>X</b></li>
+        </ul>
+    </body>
+    <script src="js/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var mainNewsList = $("#main_news_list li");
+            var deleteArr = $("#main_news_list b");
+            var bottomPx = 30;
+            $.each(mainNewsList, function(i,ele) {
+                var that = $(this);
+                setTimeout(function(){
+                    that.addClass('main_news_active');
+                },150*i);
+            });
+            $.each(deleteArr, function(i,ele) {
+                $(this).click(function(){
+                    bottomPx += 90;
+                    $("#main_news_list").animate({bottom:bottomPx+"px"});
+                    var mainNewsListOli = $(this).parents("li");
+                    mainNewsListOli.addClass('main_news_heightActive');
+                    setTimeout(function(){
+                        mainNewsListOli.remove();
+                    },500);
+                });
+            });
+        });
+    </script>
+</html>
